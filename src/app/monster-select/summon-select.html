@@ -4,28 +4,23 @@
         <tr>
             <th>Nombre</th>
             <th>Calidad</th>
-            <th>Habilidad</th>
             <th>Costo</th>
-            <th>Mejora (%)</th>
-            <th>Disponible</th>
-            <th>Invocar</th>
+            <th>cantidad</th>
         </tr>
     </thead>
     <tbody class="tabla">
         @for(monster of selected; track monster.id){
             <tr>
                 <td>{{monster.name}}</td>
-                <td>{{monster.qa}}</td>
-                <td>{{monster.skill}}</td>
+                <td>{{monster.quality}}</td>
                 <td>{{monster.cost}}</td>
-                <td>{{monster.buff}}%</td>
-                <td>{{monster.stock}}</td>
-                <td><app-input-integer [(quantity)]="monster.quantity" [max]='monster.stock'></app-input-integer></td>
-                <td><button class="btn btn-outline-success" (click)="removeElement(monster)">Eliminar</button></td>
+                <td>{{monster.quantity}}</td>
             </tr>
         }@empty {
             <tr>
-                <td class = "buff"> No hay monstruos dispobibles</td>
+                <td>
+                    No hay monstruos seleccionados
+                </td>
             </tr>
         }
     </tbody>

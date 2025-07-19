@@ -13,11 +13,9 @@ import { BehaviorSubject, Observable } from 'rxjs';
 */
 export class MonsterService {
   private _selected: Monster[] = [];    //inicio en vacio con "_" por convencion
-  _itemsSubject: BehaviorSubject<Monster[]> = new BehaviorSubject(this._selected);   //hago observable la variable
+  private _itemsSubject: BehaviorSubject<Monster[]> = new BehaviorSubject(this._selected);   //hago observable la variable
   public items: Observable<Monster[]> = this._itemsSubject.asObservable();
-  selected: any;
 
-  
   constructor(){}
 
   addElement(monster : Monster):void{
@@ -27,7 +25,6 @@ export class MonsterService {
      }else{
         aux.quantity += monster.quantity;     /*de existir el monstruo le sumo a la cantidad seleccionada deseada */
      }
-     console.log(this._selected);
      this._itemsSubject.next(this._selected);         //emitimos el cambio del patron observer con .next() equivalente a .emit() en @output
   }
   removeElement(monster: Monster):void{

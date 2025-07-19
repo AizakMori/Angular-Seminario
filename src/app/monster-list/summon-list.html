@@ -6,7 +6,6 @@
             <th>Calidad</th>
             <th>Habilidad</th>
             <th>Costo</th>
-            <th>Mejora (%)</th>
             <th>Disponible</th>
             <th>Invocar</th>
         </tr>
@@ -15,10 +14,9 @@
         @for(monster of monsters; track monster.id){
             <tr>
                 <td>{{monster.name}}</td>
-                <td>{{monster.qa}}</td>
+                <td>{{monster.quality}}</td>
                 <td>{{monster.skill}}</td>
                 <td>{{monster.cost}}</td>
-                <td>{{monster.buff}}%</td>
                 @if(monster.stock== 0){
                     <td>No disponible</td>
                     <td>No disponible</td>

@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { SummonList } from './monster-list/summon-list';
 import { SummonersAbout } from './summoners-about/summoners-about';
 import { Monsters } from './monster-container/monsters';
 
