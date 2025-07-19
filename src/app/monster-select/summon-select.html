@@ -12,7 +12,7 @@
         </tr>
     </thead>
     <tbody class="tabla">
-        @for(monster of ; track monster.id){
+        @for(monster of selected; track monster.id){
             <tr>
                 <td>{{monster.name}}</td>
                 <td>{{monster.qa}}</td>
