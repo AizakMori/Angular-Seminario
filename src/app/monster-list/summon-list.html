@@ -1,0 +1,41 @@
+<h2>{{title}}</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Calidad</th>
+            <th>Habilidad</th>
+            <th>Costo</th>
+            <th>Mejora (%)</th>
+            <th>Disponible</th>
+            <th>Invocar</th>
+        </tr>
+    </thead>
+    <tbody class="tabla">
+        @for(monster of monsters; track monster.id){
+            <tr>
+                <td>{{monster.name}}</td>
+                <td>{{monster.qa}}</td>
+                <td>{{monster.skill}}</td>
+                <td>{{monster.cost}}</td>
+                <td>{{monster.buff}}%</td>
+                @if(monster.stock== 0){
+                    <td>No disponible</td>
+                    <td>No disponible</td>
+                    <td><button class="btn btn-outline-danger">Seleccionar</button></td>
+                }@else {
+                    <td>{{monster.stock}}</td>
+                    <td><app-input-integer [(quantity)]="monster.quantity" [max]='monster.stock'></app-input-integer></td>
+                    <!-- [(quantity)] y [max] son los valores que recibe @input de input-integer 
+                        [(quantity)] two-way data binding recibe tambien el cambio de quantity a monster por @output
+                    -->
+                    <td><button class="btn btn-outline-success" (click)="addToSelect(monster)">Seleccionar</button></td>
+                }
+            </tr>
+        }@empty {
+            <tr>
+                <td class = "buff"> No hay monstruos dispobibles</td>
+            </tr>
+        }
+    </tbody>
+</table>

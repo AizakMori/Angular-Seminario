@@ -1,0 +1,8 @@
+<div class="input-group mb-3">
+<button (click)="downSelect()" class="btn btn-dark">-</button>
+<input type="text" [value]="quantity" [(ngModel)]="quantity" (keyup)="changeQuantity($event)"> 
+<!-- [(ngModel)] = "quantity" es el que llega a @input  
+    (keyup) = "funcion($event) donde $event son los datos del evento en si"
+-->
+<button (click)="upSelect()" class="btn btn-dark" >+</button>
+</div>

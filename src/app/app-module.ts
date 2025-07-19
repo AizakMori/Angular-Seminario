@@ -3,14 +3,26 @@ import { BrowserModule, provideClientHydration, withEventReplay } from '@angular
 
 import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
+import { SummonList } from './monster-list/summon-list';
+import { SummonSelect } from './monster-select/summon-select';
+import { FormsModule } from '@angular/forms';
+import { SummonersAbout } from './summoners-about/summoners-about';
+import { Monsters } from './monster-container/monsters';
+import { InputInteger } from './input-integer/input-integer';
 
 @NgModule({
   declarations: [
-    App
+    App,
+    SummonList,
+    SummonSelect,
+    SummonersAbout,
+    Monsters,
+    InputInteger
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners(),

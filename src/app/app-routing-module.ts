@@ -1,7 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { SummonList } from './monster-list/summon-list';
+import { SummonersAbout } from './summoners-about/summoners-about';
+import { Monsters } from './monster-container/monsters';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {path: '', redirectTo: 'monsters', pathMatch: 'full'},
+  {path: 'monsters', component: Monsters},
+  {path: 'about', component: SummonersAbout}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
