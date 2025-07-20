@@ -1,7 +1,6 @@
 import { Component, Input, Output } from '@angular/core';
 import { EventEmitter } from '@angular/core';
 
-
 @Component({
   selector: 'app-input-integer',
   standalone: false,

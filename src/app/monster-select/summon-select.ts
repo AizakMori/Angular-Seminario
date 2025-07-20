@@ -1,5 +1,5 @@
 import { Component} from '@angular/core';
-import { MonsterService } from '../monster-service';
+import { MonsterService } from '../services/monster-service';
 import { Monster } from '../interface/monster';
 import { OnDestroy } from '@angular/core';        //estos dos imports para destruir la suscripcion
 import { Subscription } from 'rxjs';          
@@ -20,11 +20,7 @@ export class SummonSelect implements OnDestroy{
     //traemos los valores de la variable public items y traemos los valores con la funcion flecha
     this.subscription = mservice.items.subscribe((observable)=> this.selected = observable); 
   }
-  //concepto para remover los elementos del "carrito" si me da el tiempo lo termino
-  removeElement(monster: Monster) {
-    console.log(this.selected);
-    this.mservice.removeElement(monster);
-  }
+
   ngOnDestroy(): void {
   if (this.subscription) {
     this.subscription.unsubscribe();

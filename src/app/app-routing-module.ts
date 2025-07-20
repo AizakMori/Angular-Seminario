@@ -6,7 +6,7 @@ import { Monsters } from './monster-container/monsters';
 const routes: Routes = [
   {path: '', redirectTo: 'monsters', pathMatch: 'full'},
   {path: 'monsters', component: Monsters},
-  {path: 'about', component: SummonersAbout}
+  {path: 'about', component: SummonersAbout},
 ];
 
 @NgModule({

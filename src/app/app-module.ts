@@ -1,6 +1,5 @@
 import { NgModule, provideBrowserGlobalErrorListeners, provideZonelessChangeDetection } from '@angular/core';
 import { BrowserModule, provideClientHydration, withEventReplay } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
 import { SummonList } from './monster-list/summon-list';
@@ -9,6 +8,8 @@ import { FormsModule } from '@angular/forms';
 import { SummonersAbout } from './summoners-about/summoners-about';
 import { Monsters } from './monster-container/monsters';
 import { InputInteger } from './input-integer/input-integer';
+import {provideHttpClient, withFetch} from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -17,17 +18,18 @@ import { InputInteger } from './input-integer/input-integer';
     SummonSelect,
     SummonersAbout,
     Monsters,
-    InputInteger
+    InputInteger,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideZonelessChangeDetection(),
-    provideClientHydration(withEventReplay())
+    provideClientHydration(withEventReplay()),
+    provideHttpClient(withFetch())
   ],
   bootstrap: [App]
 })
