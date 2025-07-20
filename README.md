@@ -1,10 +1,6 @@
 # SummonersGreed
-Nombre y Apellido: Isaac Careaga Anta
-DNI: 42041713
-Email: icareagaanta@alumnos.exa.unicen.edu.ar
-Sede: Tandil
-La tematica elegida para el proyecto es sobre un juego con el mismo nombre de la pagina donde uno tiene que seleccionar diferentes monstruos invocandolos
-es un tower defense, la idea del proyecto es simplemente seleccionar los monstruos disponibles y colocarlos en la instancia de inicio que seria el "carrito" en este caso
+
+This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.0.
 
 ## Development server
 
